@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: prakhar0819
+  repository: prakhar0819/k8s-testing
   tag: app0
   pullPolicy: IfNotPresent
 
