@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: app0
-        image: nginx
+        image: prakhar0819/k8s-testing:app0
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
       - name: app1
-        image: nginx
+        image: prakhar0819/k8s-testing:app1
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -99,7 +99,7 @@ spec:
     spec:
       containers:
       - name: app2
-        image: nginx
+        image: prakhar0819/k8s-testing:app2
         imagePullPolicy: Always
         ports:
         - containerPort: 80
