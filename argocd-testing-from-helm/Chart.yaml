@@ -1,0 +1,6 @@
+apiVersion: v2
+name: argocd-testing-from-helm
+description: A Helm chart for deploying multiple apps with Ingress and SSL
+type: application
+version: 0.1.0
+appVersion: "1.0"
