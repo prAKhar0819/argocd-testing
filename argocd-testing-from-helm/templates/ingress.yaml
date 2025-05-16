@@ -18,7 +18,7 @@ spec:
       http:
         paths:
           {{- range .Values.apps }}
-          - path: {{ printf "/%s" .name | replace "app0" "/" }}
+          - path: {{ if eq .name "app0" }}/{{ else }}/{{ .name }}{{ end }}
             pathType: Prefix
             backend:
               service:
