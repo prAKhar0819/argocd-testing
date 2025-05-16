@@ -422,10 +422,10 @@ git push -u origin main
 ```bash
 argocd app create argo-demo \
   --repo https://github.com/<username>/<repo>.git \
-  --path . \
+  --path argocd-testing-from-helm \
   --dest-server https://kubernetes.default.svc \
-  --dest-namespace argo-demo \
-  --helm-chart argocd-testing-from-helm
+  --dest-namespace argo-demo
+
 ```
 
 ---
