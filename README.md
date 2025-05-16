@@ -1,5 +1,5 @@
 
-# Deploy NGINX to Kubernetes Using Argo CD – Practical Guide
+# 🚀Deploy NGINX to Kubernetes Using Argo CD – Practical Guide
 
 ## Prerequisites
 
