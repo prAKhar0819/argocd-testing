@@ -407,13 +407,7 @@ apps:
 
 ## 🧬 Step 2: Push Helm Chart to GitHub
 
-```bash
-git init
-git remote add origin https://github.com/<username>/<repo>.git
-git add .
-git commit -m "Initial Helm chart for Argo CD"
-git push -u origin main
-```
+
 
 ---
 
