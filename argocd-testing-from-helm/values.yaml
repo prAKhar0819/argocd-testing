@@ -2,13 +2,13 @@ namespace: ingress
 
 apps:
   - name: app0
-    image: nginx
+    image: prakhar0819/k8s-testing:app0
     replicas: 2
   - name: app1
-    image: nginx
+    image: prakhar0819/k8s-testing:app1
     replicas: 2
   - name: app2
-    image: nginx
+    image: prakhar0819/k8s-testing:app2
     replicas: 2
 
 ingress:
