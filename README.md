@@ -461,7 +461,4 @@ You’ve successfully:
 
 
 
-Happy Shipping 🚢
-
-```
 
