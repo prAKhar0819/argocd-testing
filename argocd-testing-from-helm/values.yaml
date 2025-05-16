@@ -2,13 +2,13 @@ namespace: ingress
 
 apps:
   - name: app0
-    image: prakhar0819/k8s-testing:app0
+    image: nginx
     replicas: 2
   - name: app1
-    image: prakhar0819/k8s-testing:app1
+    image: nginx
     replicas: 2
   - name: app2
-    image: prakhar0819/k8s-testing:app2
+    image: nginx
     replicas: 2
 
 ingress:
@@ -21,3 +21,6 @@ clusterIssuer:
   enabled: true
   email: prakharsingh1932003@gmai.com
   secretName: letsencrypt-prod-account-key
+
+
+# prakhar0819/k8s-testing:app0
