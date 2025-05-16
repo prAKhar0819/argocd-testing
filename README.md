@@ -381,26 +381,30 @@ spec:
 ### 6. `values.yaml` (example)
 
 ```yaml
-namespace: argo-demo
-
-clusterIssuer:
-  enabled: true
-  email: your-email@example.com
-  secretName: letsencrypt-prod
-
-ingress:
-  enabled: true
-  issuerName: letsencrypt-prod
-  host: example.yourdomain.com
-  tlsSecret: tls-secret
+namespace: ingress
 
 apps:
   - name: app0
-    image: nginx
+    image: prakhar0819/k8s-testing:app0
     replicas: 2
   - name: app1
-    image: httpd
-    replicas: 1
+    image: prakhar0819/k8s-testing:app1
+    replicas: 2
+  - name: app2
+    image: prakhar0819/k8s-testing:app2
+    replicas: 2
+
+ingress:
+  enabled: true
+  host: empty-planet.com
+  tlsSecret: empty-planet-tls
+  issuerName: letsencrypt-prod
+
+clusterIssuer:
+  enabled: true
+  email: prakharsingh1932003@gmai.com
+  secretName: letsencrypt-prod-account-key
+
 ```
 
 ---
