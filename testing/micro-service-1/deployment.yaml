@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app0
+  namespace: ingress
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app0
+  template:
+    metadata:
+      labels:
+        app: app0
+    spec:
+      containers:
+      - name: app0
+        image: prakhar0819/k8s-testing:app0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
