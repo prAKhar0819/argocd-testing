@@ -92,7 +92,14 @@ argocd version
 
 ```bash
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+helm repo add argo https://argoproj.github.io/argo-helm
+helm repo update
+helm install argocd argo/argo-cd \
+  --namespace argocd \
+  --version 5.51.6 \
+  --set server.service.type=NodePort \
+  --set server.service.nodePortHttp=32080 \
+  --set server.service.nodePortHttps=32443
 ```
 
 Check deployment status:
@@ -102,18 +109,30 @@ kubectl get deployments -n argocd
 
 ## Step 4: Access Argo CD Dashboard
 
-1. Get initial credentials:
+1. Check services and Pod in argocd namespace:
 ```bash
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl get svc -n argocd
+kubectl get pod -n argocd
 ```
+note argocd-server pod name 
+
+```bash
+kubectl get pod <argocd-server-pod-name> -o wide
+```
+note the node name eg;- ip-172-31-36-34.ap-south-1.compute.internal 
+
+```bash
+kubectl get node <argocd-server-node-name> -o wide
+```
+
 Username: `admin`
 
 Password:
 ```bash
-argocd admin initial-password -n argocd
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
-2. Access the dashboard at: http://localhost:8080
+2. Access the dashboard at: http://<argocd-server-node-ip>:32080
 
 3. Update your password after logging in.
 
